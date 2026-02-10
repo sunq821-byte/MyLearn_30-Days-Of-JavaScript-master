@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内部&内联脚本</title>
+    <!-- 内部脚本可以写在_`head`_或_`body`_中，但首选放在HTML文档的body部分。 -->
+    <script>
+        console.log('内部脚本head')
+    </script>
+</head>
+<body>
+    <button onclick="alert('内联脚本')">点击我</button>
+    <script>
+        console.log('内部脚本body')
+    </script>
+</body>
+</html>

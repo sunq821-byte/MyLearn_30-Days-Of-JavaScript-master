@@ -1,14 +1,18 @@
-//  body中的外部脚本
+<!-- 与内部脚本类似，外部脚本链接可以在header或body中，但首选放在body中 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>外部脚本</title>
+    <script src="introduction.js"></script>
 </head>
 <body>
     <!-- JavaScript外部链接可以在header或body中 --> 
     <!-- 在body的结束标签之前是放置外部JavaScript脚本的推荐位置 -->
     <script src="introduction.js"></script>
+
+    <!-- main.js文件应位于所有其他脚本之下 -->
+    <script src="main.js"></script>
 </body>
 </html>
