@@ -12,14 +12,6 @@ const countries = [
   'Kenya'
 ];
 
-if (countries.includes('Ethiopia')) {
-  console.log('ETHIOPIA');
-} else {
-  // 如果不存在，添加到国家列表中
-  countries.push('Ethiopia');
-  console.log(countries);
-}
-
 // 1. 切出前十个国家
 const firstTenCountries = countries.slice(0, 10);
 console.log('First ten countries:', firstTenCountries);
@@ -45,4 +37,3 @@ if (countries.length % 2 === 0) {
 console.log('First half:', firstHalf);
 console.log('Second half:', secondHalf);
 
-module.exports = countries;
