@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 编写一个函数**_convertHexaToRgb_**，它将十六进制颜色转换为rgb，并返回一个rgb颜色。
+    function convertHexaToRgb(hex) {
+      hex = hex.replace('#', '')
+      let r = parseInt(hex.substring(0, 2), 16)
+      let g = parseInt(hex.substring(2, 4), 16)
+      let b = parseInt(hex.substring(4, 6), 16)
+      return `rgb(${r}, ${g}, ${b})`
+    }
+    document.write(convertHexaToRgb('#1aeeff'))
+  </script>
+</body>
+
+</html>

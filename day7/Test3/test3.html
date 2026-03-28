@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 编写一个函数**_arrayOfHexaColors_**，它在数组中返回任意数量的十六进制颜色。
+    function arrayOfHexaColors(count) {
+      const colors = []
+
+      // 生成随机数量的颜色，最多count个
+      // 最少1个
+      let colorCount = Math.floor(Math.random() * count) + 1
+
+      for (let i = 0; i < colorCount; i++) {
+        let r = Math.floor(Math.random() * 256)
+        let g = Math.floor(Math.random() * 256)
+        let b = Math.floor(Math.random() * 256)
+
+        // 将RGB分量转换为十六进制字符串
+        r = r.toString(16).padStart(2, '0')
+        g = g.toString(16).padStart(2, '0')
+        b = b.toString(16).padStart(2, '0')
+
+        // 构建十六进制颜色字符串
+        colors.push(`#${r}${g}${b}`)
+      }
+      return colors
+    }
+    document.write(arrayOfHexaColors(5).join('<br>'))
+  </script>
+</body>
+
+</html>

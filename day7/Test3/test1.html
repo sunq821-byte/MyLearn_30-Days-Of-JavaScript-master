@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 修改_userIdGenerator_函数。声明一个函数名_userIdGeneratedByUser_。它不接受任何参数，但使用prompt()接受两个输入。一个输入是字符数，第二个输入是应该生成的id数量
+    function userIdGeneratedByUser() {
+      const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+      // 获取用户输入
+      const charCount = parseInt(prompt("请输入字符数："))
+      const idCount = parseInt(prompt("请输入生成的id数量："))
+      const ids = []
+
+      for (let i = 0; i <= idCount; i++) {
+        let result = ''
+        // 生成指定字符数的id
+        for (let j = 0; j <= charCount; j++) {
+          const index = Math.floor(Math.random() * 62)
+          result += chars[index]
+        }
+        ids.push(result)
+      }
+      return ids
+    }
+    document.write(userIdGeneratedByUser().join("<br>"))
+  </script>
+</body>
+
+</html>
