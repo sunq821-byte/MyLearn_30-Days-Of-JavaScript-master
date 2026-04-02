@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 调用您的函数_factorial_，它接受一个整数作为参数并返回该数字的阶乘
+    function factorial(num) {
+      let sum = 1
+      for (let i = 1; i <= num; i++) {
+        sum *= i
+      }
+      return `${num}的阶乘为${sum}`
+    }
+    document.write(factorial(5))
+  </script>
+</body>
+
+</html>

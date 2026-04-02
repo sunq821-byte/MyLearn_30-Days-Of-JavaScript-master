@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 编写一个名为_sumOfArrayItems_的函数，它接受一个数组参数并返回所有项的总和。检查所有数组项是否为数字类型。如果不是，给出合理的反馈
+    function sumOfArrayItems(arr) {
+      let sum = 0
+      if (Array.isArray(arr)) {
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i]
+          return `数组[${arr}]的总和为：${sum}`
+        }
+      } else {
+        return `当前输入不是一个数组，请重新输入`
+      }
+    }
+    document.write(sumOfArrayItems('adaw'))
+    document.write('<br>')
+    document.write(sumOfArrayItems([1, 2, 3, 4, 5, 6, 7, 8]))
+  </script>
+</body>
+
+</html>

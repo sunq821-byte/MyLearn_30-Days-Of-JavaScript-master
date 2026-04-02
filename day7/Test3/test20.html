@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 编写一个名为reverseCountries的函数，它接受countries数组，首先复制数组，然后返回原始数组的反转
+    function reverseCountries(countries) {
+      // 复制数组（使用扩展运算符）
+      const copiedCountries = [...countries];
+
+      // 对复制的数组进行反转
+      copiedCountries.reverse();
+
+      // 返回反转后的数组
+      return copiedCountries;
+    }
+    const countries = ['China', 'USA', 'Japan', 'Germany', 'France'];
+    const reversed = reverseCountries(countries);
+
+    console.log('原始数组:', countries);  // 原始数组: ['China', 'USA', 'Japan', 'Germany', 'France']
+    console.log('反转数组:', reversed);    // 反转数组: ['France', 'Germany', 'Japan', 'USA', 'China']
+    console.log('原始数组是否不变:', countries === reversed);  // false（不同引用）
+  </script>
+</body>
+
+</html>

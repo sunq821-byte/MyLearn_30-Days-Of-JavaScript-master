@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 调用您的函数_isEmpty_，它接受一个参数并检查它是否为空
+    function isEmpty(ch) {
+      if (ch === undefined || ch === null) {
+        return '参数为空'
+      }
+      return '参数不为空'
+    }
+    document.write(isEmpty())
+    document.write('<br>')
+    document.write(isEmpty(''))
+    document.write('<br>')
+    document.write(isEmpty('12'))
+
+  </script>
+</body>
+
+</html>

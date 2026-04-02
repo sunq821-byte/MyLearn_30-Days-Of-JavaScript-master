@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 编写一个名为_isPrime_的函数，它检查一个数字是否为质数
+    function isPrime(num) {
+      if (num <= 1) {
+        return `${num}不是一个质数`
+      }
+
+      // 从2到num-1检查是否有因数
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+          return `${num}不是一个质数`
+        }
+      }
+      return `${num}是一个质数`
+    }
+    document.write(isPrime(2))
+    document.write('<br>')
+    document.write(isPrime(7))
+  </script>
+</body>
+
+</html>

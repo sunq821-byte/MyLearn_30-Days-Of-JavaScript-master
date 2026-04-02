@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 编写一个函数，检查数组中的所有项是否为相同的数据类型
+    function isLike(arr) {
+      if (!Array.isArray(arr)) {
+        return `当前输入不是一个数组，请检查`
+      }
+
+      // 处理空数组或只有一个元素的情况
+      if (arr.length <= 1) {
+        return `数组[${arr.join(', ')}]所有项类型相同`;
+      }
+
+      // 获取第一个元素的类型
+      const firstType = typeof arr[0]
+
+      // 对其余元素依次与第一个元素进行对比
+      for (let i = 1; i < arr.length; i++) {
+        if (firstType !== typeof arr[i]) {
+          return `数组[${arr.join(', ')}]不是所有项都相同`
+        }
+      }
+      return `数组[${arr.join(', ')}]所有项类型相同（类型：${firstType}）`
+    }
+    document.write(isLike([1, 2, 3, 4, 5]))
+    document.write('<br>')
+    document.write(isLike([1, 2, 'a', 4, 5]))
+  </script>
+</body>
+
+</html>

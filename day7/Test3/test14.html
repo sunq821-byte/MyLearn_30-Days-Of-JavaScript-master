@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 编写一个名为_modifyArray_的函数，它接受数组作为参数并修改数组的第五项，然后返回数组。如果数组长度小于五，则返回'未找到项'
+    function modifyArray(arr) {
+      // 检查是否为数组
+      if (!Array.isArray(arr)) {
+        return '参数不是数组'
+      }
+
+      // 检查数组长度是否小于5
+      if (arr.length < 5) {
+        return '未找到项'
+      }
+
+      // 修改第五项（索引为4）
+      arr[4] = 50
+
+      // 返回修改后的数组
+      return arr
+    }
+
+    // 测试
+    document.write(modifyArray([1, 2, 3, 4]))
+    document.write('<br>')
+    document.write(modifyArray([1, 2, 3, 4, 5, 6, 7]))
+  </script>
+</body>
+
+</html>

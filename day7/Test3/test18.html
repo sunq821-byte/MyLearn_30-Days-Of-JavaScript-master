@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // JavaScript变量名不支持特殊字符或符号，除了$或_。编写一个函数**isValidVariable**，检查变量是有效还是无效变量
+    function isValidVariable(variableName) {
+      // 检查是否为字符串 
+      if (typeof variableName !== 'string') {
+        return '请输入字符串'
+      }
+
+      // 检查是否为空字符
+      if (variableName === '') {
+        return '变量名不能为空'
+      }
+
+      // 检查是否以数字开头
+      if (/\d/.test(variableName[0])) {
+        return `变量名 "${variableName}" 无效：不能以数字开头`
+      }
+
+      // 检查是否包括无效字符（只允许字母、数字、$、_）
+      if (!/^[a-zA-z0-9_$]+$/.test(variableName)) {
+        return `变量名 "${variableName}" 无效：包含无效字符（只允许字母、数字、$、_）`
+      }
+
+      // 检查是否为 JavaScript 保留字
+      const reservedWords = [
+        'abstract', 'arguments', 'await', 'boolean', 'break', 'byte', 'case', 'catch', 'char', 'class', 'const', 'continue', 'debugger', 'default', 'delete', 'do', 'double', 'else', 'enum', 'eval', 'export', 'extends', 'false', 'final', 'finally', 'float', 'for', 'function', 'goto', 'if', 'implements', 'import', 'in', 'instanceof', 'int', 'interface', 'let', 'long', 'native', 'new', 'null', 'package', 'private', 'protected', 'public', 'return', 'short', 'static', 'super', 'switch', 'synchronized', 'this', 'throw', 'throws', 'transient', 'true', 'try', 'typeof', 'var', 'void', 'volatile', 'while', 'with', 'yield'
+      ];
+
+      if (reservedWords.includes(variableName)) {
+        return `变量名 "${variableName}" 无效：不能使用 JavaScript 保留字`;
+      }
+
+      // 所有检查通过，变量名有效
+      return `变量名 "${variableName}" 有效`;
+    }
+    console.log(isValidVariable('myVariable'));       // 变量名 "myVariable" 有效
+    console.log(isValidVariable('123abc'));           // 变量名 "123abc" 无效：不能以数字开头
+    console.log(isValidVariable('my-variable'));      // 变量名 "my-variable" 无效：包含无效字符
+    console.log(isValidVariable('if'));               // 变量名 "if" 无效：不能使用 JavaScript 保留字
+    console.log(isValidVariable('$myVar'));           // 变量名 "$myVar" 有效
+    console.log(isValidVariable('_myVar'));           // 变量名 "_myVar" 有效
+  </script>
+</body>
+
+</html>

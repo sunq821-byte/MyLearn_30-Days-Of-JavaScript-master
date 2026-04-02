@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 编写一个函数，返回0-9范围内的七个随机数的数组。所有数字必须是唯一的
+    function creatArr() {
+      // 创建0-9的数组
+      const pool = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+      // 洗牌算法
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+
+      // 返回前7个元素
+      return pool.slice(0, 7);
+    }
+    console.log(creatArr())
+    // 可能输出：[3, 7, 1, 9, 2, 5, 8]
+
+    console.log(creatArr())
+    // 可能输出：[0, 4, 6, 2, 9, 1, 7]
+
+    console.log(creatArr())
+    // 可能输出：[5, 8, 3, 1, 0, 9, 2]
+  </script>
+</body>
+
+</html>
